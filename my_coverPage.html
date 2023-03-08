@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+</head>
+<style>
+body {
+    background: radial-gradient(#444, #000);
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}    
+    
+    .leaves div{
+        position: absolute;
+        animation: animate 20s ease-in-out infinite;
+        right: 20%;
+        border-radius: 50%;
+        width: 16px;
+        height: 16px;   
+        overflow: hidden;
+    }
+
+    @keyframes animate {
+    0% {
+        top: 0%;
+        transform: rotate(0deg) translateX(0);
+        background: radial-gradient(#fbf5d7, #303c37);
+        opacity: 0.3;
+
+    }
+
+    20% {
+        top: 25%;
+        transform: rotate(-10deg) translateX(-50px);
+        background: radial-gradient(#fbf5d7, #303c37);
+        opacity: 0.6;
+    }
+    40% {
+        top: 45%;
+        transform: rotate(10deg) translateX(40px);
+        background: radial-gradient(#fbf5d7, #303c37);
+        opacity: 0.2;
+    }
+    60% {
+        top: 75%;
+        transform: rotate(-5deg) translateX(-60px);
+        background: radial-gradient(#fbf5d7, #303c37);
+        opacity: 0.4;
+    }
+    80% {
+        top: 90%;
+        transform: rotate(5deg) translateX(30px);
+        background: radial-gradient(#fbf5d7, #303c37);
+        opacity: 0.2;
+    }
+    100% {
+        top: 120%;
+        transform: rotate(0deg) translateX(-20);
+        background: radial-gradient(#fbf5d7, #303c37);
+        opacity: 0.5;
+    }
+}
+.heading{
+  color: white;
+  text-align: center;
+  padding-top: 30vh;
+  font-size: 70px;
+}
+
+</style>
+<body>
+    <div class="contain">
+        <div class="leaves">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+<div class="heading">Vincent <br><span style="font-size: 20px
+;"> press the light to go to next page</span></div>
+
+</body>
+<script>
+let leaves = document.querySelectorAll(".leaves div");
+for (let leaf of leaves) {
+   let  dropPosition = Math.floor(Math.random() * 100);
+  let  animateDelay = Math.floor(Math.random() * 100);
+
+    leaf.style.right = `${dropPosition}%`;
+    leaf.style.animationDelay  = `${animateDelay/5}s`;
+    
+    leaf.addEventListener("click", function() {
+      window.location.href = "my_profile.html";
+    });
+}
+   
+</script>
+</html>
