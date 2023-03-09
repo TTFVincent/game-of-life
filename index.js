@@ -245,11 +245,7 @@ function printPatternOutline() {
       // }
     });
   }
-
-  
-
 }
-
 
 //When mouse is dragged
 function mouseDragged() {
