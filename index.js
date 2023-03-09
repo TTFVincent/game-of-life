@@ -245,7 +245,11 @@ function printPatternOutline() {
       // }
     });
   }
+
+  
+
 }
+
 
 //When mouse is dragged
 function mouseDragged() {
@@ -310,7 +314,7 @@ document.getElementById("canvas").addEventListener("click", () => {
     let peerX = (mx + element.x + columns) % columns;
     let peerY = (my + element.y + rows) % rows;
     if (element.alive) {
-      Board[mx + element.x][my + element.y].alive = 1;
+      Board[peerX][peerY].alive = 1;
       fill(boxColor);
       stroke(0, 255, 0);
         rect(
@@ -640,8 +644,9 @@ let mx = Math.floor(mouseX / unitLength);
 
 pattern.forEach((element) => {
   let peerX = (mx + element.x + columns) % columns;
-  let peerY = (my + element.y + rows) % rows;
-  if (element.alive) {
+  let peerY = (my + element.y + rows) % rows
+  
+  if (element.alive && mouseX<windowWidth - 200 && mouseX>0 &&  mouseY>0 &&mouseY <windowHeight - 200 ) {
     stroke(0, 255, 0);
       rect(
         peerX * unitLength,
